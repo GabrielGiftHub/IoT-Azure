@@ -1,0 +1,336 @@
+<!-- filepath: azure-iot-github-pages/index.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto IoT com Azure e Python</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+        .code-block {
+            background-color: #1e293b;
+            color: #e2e8f0;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            position: relative;
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .copy-btn {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            background-color: #475569;
+            color: #f1f5f9;
+            border: none;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            font-size: 0.75rem;
+            transition: background-color 0.2s;
+        }
+        .copy-btn:hover {
+            background-color: #64748b;
+        }
+        .section-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+        .section-header {
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f1f5f9;
+        }
+        .section-content {
+            padding: 1.5rem;
+            border-top: 1px solid #e2e8f0;
+        }
+        .step-number {
+            background-color: #3b82f6;
+            color: white;
+            border-radius: 9999px;
+            width: 2.5rem;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+        .arrow-icon {
+            transition: transform 0.3s ease;
+        }
+        .collapsed .arrow-icon {
+            transform: rotate(-90deg);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="container mx-auto px-4 py-8 md:py-12 max-w-4xl">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-slate-800 mb-4">🚀 Projeto IoT com Azure e Python</h1>
+            <p class="text-lg text-slate-600 max-w-3xl mx-auto">Um guia interativo para simular um dispositivo IoT, conectá-lo ao Azure IoT Hub e monitorar dados em tempo real.</p>
+        </header>
+
+        <div class="section-card">
+            <div class="section-header collapsible-trigger">
+                <h2 class="text-2xl font-semibold text-slate-700">🎯 Descrição do Projeto</h2>
+                <span class="arrow-icon text-2xl">▼</span>
+            </div>
+            <div class="section-content collapsible-content">
+                <p class="text-slate-600 leading-relaxed">
+                    Este projeto demonstra como um script Python pode simular um dispositivo IoT, enviando dados de telemetria (temperatura e umidade) para o Azure IoT Hub. Utilizamos o Azure IoT Hub como um hub de mensagens seguro e escalável para a ingestão de dados. O monitoramento é realizado em tempo real através do Azure Cloud Shell. Este é um ponto de partida fundamental para qualquer solução IoT, demonstrando o fluxo de dados do dispositivo para a nuvem.
+                </p>
+            </div>
+        </div>
+        
+        <div class="section-card">
+            <div class="section-header collapsible-trigger">
+                <h2 class="text-2xl font-semibold text-slate-700">🛠️ Tecnologias Utilizadas</h2>
+                <span class="arrow-icon text-2xl">▼</span>
+            </div>
+            <div class="section-content collapsible-content">
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-center">
+                    <div class="bg-slate-50 p-4 rounded-lg">
+                        <div class="text-4xl mb-2">☁️</div>
+                        <h3 class="font-semibold">Azure IoT Hub</h3>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-lg">
+                        <div class="text-4xl mb-2">🐍</div>
+                        <h3 class="font-semibold">Python 3.x</h3>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-lg">
+                        <div class="text-4xl mb-2">📦</div>
+                        <h3 class="font-semibold">Azure IoT SDK</h3>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-lg">
+                        <div class="text-4xl mb-2">🔒</div>
+                        <h3 class="font-semibold">python-dotenv</h3>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-lg">
+                        <div class="text-4xl mb-2">⌨️</div>
+                        <h3 class="font-semibold">Azure CLI</h3>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-lg">
+                        <div class="text-4xl mb-2">🌐</div>
+                        <h3 class="font-semibold">Azure Cloud Shell</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-card">
+            <div class="section-header collapsible-trigger">
+                <h2 class="text-2xl font-semibold text-slate-700">📋 Pré-requisitos</h2>
+                <span class="arrow-icon text-2xl">▼</span>
+            </div>
+            <div class="section-content collapsible-content">
+                <ul class="space-y-3 text-slate-600">
+                    <li class="flex items-center"><span class="text-green-500 mr-3 text-xl">✅</span> Uma conta ativa no Azure.</li>
+                    <li class="flex items-center"><span class="text-green-500 mr-3 text-xl">✅</span> Python 3.x instalado localmente.</li>
+                    <li class="flex items-center"><span class="text-green-500 mr-3 text-xl">✅</span> `pip` (gerenciador de pacotes do Python) atualizado.</li>
+                    <li class="flex items-center"><span class="text-green-500 mr-3 text-xl">✅</span> Acesso a um terminal (PowerShell, CMD, etc.).</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section-card">
+            <div class="section-header collapsible-trigger">
+                <h2 class="text-2xl font-semibold text-slate-700">🚀 Configuração do Projeto</h2>
+                <span class="arrow-icon text-2xl">▼</span>
+            </div>
+            <div class="section-content collapsible-content space-y-8">
+                
+                <div class="flex flex-col md:flex-row items-start gap-6">
+                    <div class="step-number">1</div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">Configuração no Portal do Azure</h3>
+                        <p class="text-slate-600 mb-4">Crie um Grupo de Recursos, um IoT Hub e registre um novo dispositivo para obter a cadeia de conexão primária.</p>
+                        <ul class="list-disc list-inside space-y-2 text-slate-600">
+                            <li>Crie um <strong>Grupo de Recursos</strong> (ex: `meuGrupoIoTDemo`).</li>
+                            <li>Crie um <strong>Azure IoT Hub</strong> no plano Gratuito (F1) (ex: `meuprimeiroiothub12345`).</li>
+                            <li>No IoT Hub, vá para <strong>Dispositivos</strong> e adicione um novo dispositivo (ex: `meuDispositivoSimulado`).</li>
+                            <li>Copie a <strong>Cadeia de conexão primária</strong> do dispositivo. Você precisará dela em breve.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row items-start gap-6">
+                    <div class="step-number">2</div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">Configuração do Ambiente Local</h3>
+                        <p class="text-slate-600 mb-4">Prepare seu ambiente local instalando as dependências Python necessárias.</p>
+                        <div class="code-block">
+                            <button class="copy-btn" onclick="copyToClipboard(this)">Copiar</button>
+                            <code class="text-sm">pip install azure-iot-device python-dotenv</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row items-start gap-6">
+                    <div class="step-number">3</div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">Crie o Arquivo `.env` para Segurança</h3>
+                        <p class="text-slate-600 mb-4">Na pasta do seu projeto, crie um arquivo chamado `.env` e adicione sua cadeia de conexão. Isso mantém suas credenciais seguras e fora do código-fonte.</p>
+                        <div class="code-block">
+                             <button class="copy-btn" onclick="copyToClipboard(this)">Copiar</button>
+                             <code class="text-sm">IOTHUB_DEVICE_CONNECTION_STRING=SuaCadeiaDeConexaoPrimariaAqui</code>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-2">Lembre-se de substituir "SuaCadeiaDeConexaoPrimariaAqui" pela chave que você copiou do Azure Portal. Não use aspas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section-card">
+             <div class="section-header collapsible-trigger">
+                <h2 class="text-2xl font-semibold text-slate-700">▶️ Como Executar o Projeto</h2>
+                <span class="arrow-icon text-2xl">▼</span>
+            </div>
+            <div class="section-content collapsible-content space-y-8">
+                <div class="flex flex-col md:flex-row items-start gap-6">
+                    <div class="step-number">1</div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">Inicie o Monitor de Eventos no Azure</h3>
+                        <p class="text-slate-600 mb-4">Abra o Azure Cloud Shell e execute o comando abaixo para começar a "escutar" as mensagens que chegam ao seu IoT Hub. Mantenha esta janela aberta.</p>
+                        <div class="code-block">
+                             <button class="copy-btn" onclick="copyToClipboard(this)">Copiar</button>
+                             <code class="text-sm">az iot hub monitor-events --hub-name SEU_NOME_DO_IOT_HUB --device-id meuDispositivoSimulado</code>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row items-start gap-6">
+                    <div class="step-number">2</div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">Execute o Script do Dispositivo</h3>
+                        <p class="text-slate-600 mb-4">Em seu terminal local, na pasta do projeto, execute o script Python para iniciar a simulação.</p>
+                        <div class="code-block">
+                            <button class="copy-btn" onclick="copyToClipboard(this)">Copiar</button>
+                            <code class="text-sm">python simulador_dispositivo.py</code>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row items-start gap-6">
+                    <div class="step-number">3</div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">Observe a Mágica Acontecer</h3>
+                        <p class="text-slate-600 mb-4">Volte para a janela do Azure Cloud Shell. Você verá as mensagens de telemetria aparecendo em formato JSON, confirmando que sua solução IoT está funcionando!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-card">
+            <div class="section-header collapsible-trigger">
+                <h2 class="text-2xl font-semibold text-slate-700">💡 Conhecimento Demonstrado</h2>
+                <span class="arrow-icon text-2xl">▼</span>
+            </div>
+            <div class="section-content collapsible-content">
+                <ul class="space-y-3 text-slate-600 list-inside">
+                    <li class="flex"><span class="mr-3">🔧</span> Configuração de Recursos na Nuvem (Azure).</li>
+                    <li class="flex"><span class="mr-3">🔗</span> Conectividade Segura de Dispositivos IoT.</li>
+                    <li class="flex"><span class="mr-3">📡</span> Envio de Telemetria e Ingestão de Mensagens.</li>
+                    <li class="flex"><span class="mr-3">📊</span> Monitoramento de Dados em Tempo Real.</li>
+                    <li class="flex"><span class="mr-3">🐍</span> Programação Python para Soluções IoT.</li>
+                    <li class="flex"><span class="mr-3">🔐</span> Boas Práticas de Segurança com Credenciais.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section-card">
+            <div class="section-header collapsible-trigger">
+                <h2 class="text-2xl font-semibold text-slate-700">➡️ Próximos Passos</h2>
+                <span class="arrow-icon text-2xl">▼</span>
+            </div>
+            <div class="section-content collapsible-content">
+                <p class="text-slate-600 mb-4">Este é apenas o começo! Você pode expandir este projeto de várias maneiras:</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="bg-blue-50 border border-blue-200 p-4 rounded-lg">
+                        <h4 class="font-semibold text-blue-800">Armazenamento de Dados</h4>
+                        <p class="text-sm text-blue-700">Envie os dados para o Azure Storage ou Cosmos DB.</p>
+                    </div>
+                     <div class="bg-green-50 border border-green-200 p-4 rounded-lg">
+                        <h4 class="font-semibold text-green-800">Análise de Dados</h4>
+                        <p class="text-sm text-green-700">Use o Azure Stream Analytics para processar os dados.</p>
+                    </div>
+                     <div class="bg-purple-50 border border-purple-200 p-4 rounded-lg">
+                        <h4 class="font-semibold text-purple-800">Visualização de Dados</h4>
+                        <p class="text-sm text-purple-700">Crie dashboards interativos com o Power BI.</p>
+                    </div>
+                     <div class="bg-yellow-50 border border-yellow-200 p-4 rounded-lg">
+                        <h4 class="font-semibold text-yellow-800">Dispositivo Real</h4>
+                        <p class="text-sm text-yellow-700">Adapte o script para um Raspberry Pi ou ESP32.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="text-center mt-12">
+            <p class="text-slate-500">✍️ Criado por Gabriel Guimarães</p>
+        </footer>
+
+    </div>
+
+    <script>
+        function copyToClipboard(button) {
+            const codeBlock = button.nextElementSibling;
+            const textToCopy = codeBlock.innerText;
+            
+            const textArea = document.createElement('textarea');
+            textArea.value = textToCopy;
+            document.body.appendChild(textArea);
+            textArea.select();
+            try {
+                document.execCommand('copy');
+                button.innerText = 'Copiado!';
+                setTimeout(() => {
+                    button.innerText = 'Copiar';
+                }, 2000);
+            } catch (err) {
+                console.error('Falha ao copiar texto: ', err);
+            }
+            document.body.removeChild(textArea);
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const triggers = document.querySelectorAll('.collapsible-trigger');
+
+            triggers.forEach(trigger => {
+                const content = trigger.nextElementSibling;
+                const parentCard = trigger.parentElement;
+
+                if (trigger !== triggers[0]) {
+                    content.style.display = 'none';
+                    parentCard.classList.add('collapsed');
+                }
+
+                trigger.addEventListener('click', () => {
+                    const isCollapsed = content.style.display === 'none';
+                    
+                    content.style.display = isCollapsed ? 'block' : 'none';
+                    parentCard.classList.toggle('collapsed', !isCollapsed);
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
